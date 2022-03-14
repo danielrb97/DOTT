@@ -1,4 +1,4 @@
-# DOTT: DevOps Test Taskk
+# DOTT: DevOps Test Tasks
 
 Welcome to DOTT.
 
