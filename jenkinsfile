@@ -1,0 +1,24 @@
+pipeline{
+    agent any
+    stages{
+        stage('cloning repo from git/build'){
+            steps{
+                //clone the repo from my git
+                git 'https://github.com/danielrb97/DOTT.git'
+                //execute and build in a docker image
+                echo "se clono chido y buildeo chido, palabra de belcebub"
+            }
+        }
+        stage('Sonarqube analisis'){
+            steps{
+                script{
+                    scannerHome= tool 'SonarQubeScanner-4.7.0'
+                    withSonarQubeEnv('sonarqube-7.9.3'){
+                        sh 'cd ${WORKSPACE}/cidr_convert_api/go/ && sudo ${scannerHome}/bin/sonar-scanner'
+                    }   
+                }
+            }
+        }
+    }
+    
+}
