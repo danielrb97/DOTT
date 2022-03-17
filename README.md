@@ -1,4 +1,4 @@
-# DOTT: DevOps Test TaskHOLAa
+# DOTT: DevOps Test TaskHOL
 
 Welcome to DOTT.
 
