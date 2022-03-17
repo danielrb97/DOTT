@@ -35,14 +35,20 @@ pipeline{
                 }
             }
         }
-        stage('Unit test'){
+        stage('pre-test'){
             steps{
-                echo "installing plugin/dependencies"
                 sh 'go version'
                 sh 'go get -v -u github.com/gorilla/mux'
+                dir ('/var/lib/jenkins/workspace/sonarqube-pipeline/cidr_convert_api/go'){
+                    sh 'go build'
+                }
+            }          
+        }
+        stage('Unit test'){
+            steps{
                 script{ 
                    dir ('/var/lib/jenkins/workspace/sonarqube-pipeline/cidr_convert_api/go'){
-                       sh "go build"
+                       sh 'go test -v'
                    }
                 }
             }
