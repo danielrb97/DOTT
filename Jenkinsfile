@@ -48,7 +48,7 @@ pipeline{
         }
         stage('Unit test'){
             steps{
-                dir('/var/lib/jenkins/tools/org.jenkinsci.plugins.golang.GolangInstallation/go1.15/src'){
+                dir('/var/lib/jenkins/jobs/sonarqube-pipeline/builds/113'){
                     sh 'go get -v -u github.com/gorilla/mux'
                 }
                 script{ 
