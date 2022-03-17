@@ -40,6 +40,7 @@ pipeline{
                 echo "installing plugin/dependencies"
                 sh 'go version'
                 sh 'go get -v -u github.com/gorilla/mux'
+                sh 'go get -v -u github.com/stretchr/testify/tree/master/assert'
                 script{ 
                    dir ('/var/lib/jenkins/workspace/sonarqube-pipeline/cidr_convert_api/go'){
                        sh 'go build'
