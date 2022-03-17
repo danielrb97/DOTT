@@ -43,14 +43,12 @@ pipeline{
                     sh 'go get -v -u github.com/gorilla/mux'
                     sh 'go get -v -u github.com/pkg/errors'
                     sh 'go get -v -u github.com/stretchr/testify/assert'
+                    sh 'go build'
                 }
             }          
         }
         stage('Unit test'){
             steps{
-                dir('/var/lib/jenkins/jobs/sonarqube-pipeline/builds/113'){
-                    sh 'go get -v -u github.com/gorilla/mux'
-                }
                 script{ 
                    dir ('/var/lib/jenkins/workspace/sonarqube-pipeline/cidr_convert_api/go'){
                        sh 'go test -v'  
