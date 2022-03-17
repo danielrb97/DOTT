@@ -9,6 +9,7 @@ pipeline{
         CGO_ENABLED = 0 
         // the path of go installation
         GOPATH = "${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"
+        GOROOT = ""
     }
     stages{
         stage('Build'){
@@ -39,7 +40,7 @@ pipeline{
             steps{
                 sh 'go version'
                 
-                dir('${GOPATH}/src'){
+                dir('/var/lib/jenkins/tools/org.jenkinsci.plugins.golang.GolangInstallation/go1.15/src'){
                     sh 'go get -v -u github.com/gorilla/mux'
                     sh 'go get -v -u github.com/pkg/errors'
                     sh 'go get -v -u github.com/stretchr/testify/assert'
