@@ -38,6 +38,7 @@ pipeline{
         stage('pre-test'){
             steps{
                 sh 'go version'
+                sh 'rm go.mod '
                // sh 'go get -v -u github.com/gorilla/mux'
                 
             }          
