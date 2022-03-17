@@ -5,4 +5,4 @@ github.com/gorilla/mux
 
 //Test Dependancies
 github.com/pkg/errors
-github.com/stretchr/testify/assert
+github.com/stretchr/testify/tree/master/assert
