@@ -55,8 +55,8 @@ pipeline{
             steps{
                 script{ 
                    dir ('/var/lib/jenkins/workspace/sonarqube-pipeline/cidr_convert_api/go'){
-                       sh './go build'
-                       sh './go test -v'  
+                       sh 'go build'
+                       sh 'go test -v'  
                    }
                 }
             }
