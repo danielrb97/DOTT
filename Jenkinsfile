@@ -15,7 +15,7 @@ pipeline{
             steps{
                 //clone the repo from my git
                 git 'https://github.com/danielrb97/DOTT.git'
-                //building the "api" file from repo in docker <3
+                //building the "api" file from repo in docker <3s
                 sh 'cd  ${WORKSPACE}/cidr_convert_api/go/ && sudo docker build -t api .'
             }
         }
