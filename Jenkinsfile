@@ -43,7 +43,7 @@ pipeline{
                     sh 'go get -v -u github.com/gorilla/mux'
                     sh 'go get -v -u github.com/pkg/errors'
                     sh 'go get -v -u github.com/stretchr/testify/assert'
-                    sh 'go build'
+                    sh 'go mod vendor'
                 }
             }          
         }
