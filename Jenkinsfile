@@ -41,6 +41,7 @@ pipeline{
                 sh 'go version'
                 
                 dir('/var/lib/jenkins/tools/org.jenkinsci.plugins.golang.GolangInstallation/go1.15/src'){
+                    sh 'go get -v -u github.com/gorilla/mux'
                     sh 'go install github.com/gorilla/mux'
                     //sh 'go get -v -u github.com/pkg/errors'
                     //sh 'go get -v -u github.com/stretchr/testify/assert'
