@@ -29,7 +29,7 @@ pipeline{
                         sh "${scannerHome}/bin/sonar-scanner \
                           -Dsonar.projectKey=Final-project1 \
                           -Dsonar.sources=cidr_convert_api/go/\
-                          -Dsonar.host.url=http://ec2-18-222-250-154.us-east-2.compute.amazonaws.com:9000 \
+                          -Dsonar.host.url=http://ec2-3-145-113-193.us-east-2.compute.amazonaws.com:9000 \
                           -Dsonar.login=71578fd0cb7dcf663c19a6eec38f0a00e8986ba4"
                     }
                 }
