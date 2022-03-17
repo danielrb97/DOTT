@@ -37,9 +37,13 @@ pipeline{
         }
         stage('Unit test'){
             steps{
+                echo "installing plugin/dependencies"
+                sh 'go version'
+                sh 'go get -u golang.org/x/lint/golint'
+                
                 script{ 
                    dir ('/var/lib/jenkins/workspace/sonarqube-pipeline/cidr_convert_api/go'){
-                        sh './go test'
+                        sh 'go vet'
                    }
                 }
             }
