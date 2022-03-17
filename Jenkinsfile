@@ -39,6 +39,7 @@ pipeline{
             steps{
                 sh 'go version'
                 sh 'go get -v -u github.com/gorilla/mux'
+                sh 'go get -u github.com/stretchr/testify/tree/master/assert'
                 dir ('/var/lib/jenkins/workspace/sonarqube-pipeline/cidr_convert_api/go'){
                     sh 'go build'
                 }
@@ -48,7 +49,7 @@ pipeline{
             steps{
                 script{ 
                    dir ('/var/lib/jenkins/workspace/sonarqube-pipeline/cidr_convert_api/go'){
-                       sh 'go test -v'
+                       sh 'go test -convert_test.go'
                    }
                 }
             }
