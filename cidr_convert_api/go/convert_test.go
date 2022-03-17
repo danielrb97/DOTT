@@ -3,7 +3,7 @@ package main
 import (
 	"testing"
 
-	"github.com/stretchr/testify/assert"
+	"github.com/gorilla/mux"
 )
 
 func TestValidCidrToMask(t *testing.T) {
