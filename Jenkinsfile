@@ -37,13 +37,9 @@ pipeline{
         }
         stage('Unit test'){
             steps{
-                sh 'pwd ${GOPATH}'
-                echo "installing plugin/dependencies"
-                sh 'go version'
-                sh 'go get github.com/gorilla/mux'
                 script{ 
                    dir ('/var/lib/jenkins/workspace/sonarqube-pipeline/cidr_convert_api/go'){
-                        sh 'go test'
+                        sh './go test'
                    }
                 }
             }
