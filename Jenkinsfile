@@ -41,8 +41,8 @@ pipeline{
         stage('pre-test'){
             steps{
                 sh 'go version'
-                sh 'go get -v -u github.com/gorilla/mux'
-                sh 'go install github.com/gorilla/mux'
+                sh 'go get -v -u github.com/gorilla/mux  && go get -v -u github.com/stretchr/testify/assert'
+                sh 'go install github.com/gorilla/mux && go install github.com/stretchr/testify/assert'
             }          
         }
         stage('Unit test'){
