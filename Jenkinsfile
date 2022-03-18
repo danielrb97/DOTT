@@ -39,12 +39,18 @@ pipeline{
         stage('pre-test'){
             steps{
                 sh 'go version'
+                dir ('/var/lib/jenkins/workspace/sonarqube-pipeline/cidr_convert_api/go'){
+                       sh 'go build -Goopfile'  
+                   }
+
+                /*
                 dir('/var/lib/jenkins/tools/org.jenkinsci.plugins.golang.GolangInstallation/go1.15/src'){
                     sh 'go get -v -u github.com/gorilla/mux'
                     sh 'go install  -mod=readonly  github.com/gorilla/mux'
                     //sh 'go get -v -u github.com/pkg/errors'
                     //sh 'go get -v -u github.com/stretchr/testify/assert'
                 }
+                */
             }          
         }
         stage('Unit test'){
