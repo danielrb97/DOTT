@@ -59,7 +59,7 @@ pipeline{
                 //again, copy the app .NOTE: WORKSPACE is like  a path that jenkins create
                 git 'https://github.com/danielrb97/DOTT.git'
                    //      whe mi go files are                   building the image                                          putting a tag    the ports where the image is running 5001 is the best   "new server" will be the name of the image and "go-docker" the repository                                                                                            
-                sh 'cd ${WORKSPACE}/cidr_convert_api/go  && sudo docker build  --tag go-docker . && sudo docker tag go-docker:latest go-docker:v1.0.0 &&  sudo docker run -d -p 5001:5001 --name new-server go-docker'
+                sh 'cd ${WORKSPACE}/cidr_convert_api/go  && sudo docker build  --tag go-docker . && sudo docker tag go-docker:latest go-docker:v1.0.0 &&  sudo docker run -d -p 5001:5001 --name test go-docker'
             }
         }
     }
