@@ -11,8 +11,8 @@ pipeline{
         GOPATH = "${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"
         GOROOT = ""
     }
-    /*
     stages{
+        /*
         stage('Build'){
             steps{
                 //clone the repo from my git
