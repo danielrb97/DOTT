@@ -38,7 +38,7 @@ pipeline{
         }
         stage('pre-test'){
             steps{
-                //installation of de the packages, the go version its just to let me know which version of im using
+                //installation of de the packages, the go version its just to let me know which version of i using
                 sh 'go version'
                 sh 'go get -v -u github.com/gorilla/mux  && go get -v -u github.com/stretchr/testify/assert'
                 sh 'go install github.com/gorilla/mux && go install github.com/stretchr/testify/assert'
