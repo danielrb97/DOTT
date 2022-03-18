@@ -29,10 +29,10 @@ func TestValidMaskToCidr(t *testing.T) {
 func TestValidIpv4(t *testing.T) {
 	assert := assert.New(t)
 
-	assert.NotEqual(true, ipv4Validation("127.0.0.1"))
-	assert.NotEqual(true, ipv4Validation("0.0.0.0"))
-	assert.NotEqual(true, ipv4Validation("192.168.0.1"))
-	assert.NotEqual(true, ipv4Validation("255.255.255.255"))
+	assert.Equal(true, ipv4Validation("127.0.0.1"))
+	assert.Equal(true, ipv4Validation("0.0.0.0"))
+	assert.Equal(true, ipv4Validation("192.168.0.1"))
+	assert.Equal(true, ipv4Validation("255.255.255.255"))
 }
 
 
