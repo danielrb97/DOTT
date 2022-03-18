@@ -42,7 +42,7 @@ pipeline{
             steps{
                 sh 'go version'
                 sh 'go get -v -u github.com/gorilla/mux'
-                sh 'go install  -mod=readonly  github.com/gorilla/mux'
+                sh 'go install github.com/gorilla/mux'
             }          
         }
         stage('Unit test'){
