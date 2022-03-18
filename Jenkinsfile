@@ -12,7 +12,6 @@ pipeline{
         GOROOT = ""
     }
     stages{
-        /*
         stage('Build'){
             steps{
                 //clone the repo from my git
@@ -37,7 +36,6 @@ pipeline{
                 }
             }
         }
-        */
         stage('pre-test'){
             steps{
                 sh 'go version'
